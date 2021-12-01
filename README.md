@@ -1,1 +1,1 @@
-# DiVANet-Pytorch
+The source code will be released.
