@@ -86,3 +86,24 @@ We achieved state-of-the-art performance on lightweigh image SR, denoising and d
 </p>
   </details>
 
+## Citation
+```
+@article{behjati2023single,
+  title={Single image super-resolution based on directional variance attention network},
+  author={Behjati, Parichehr and Rodriguez, Pau and Fern{\'a}ndez, Carles and Hupont, Isabelle and Mehri, Armin and Gonz{\`a}lez, Jordi},
+  journal={Pattern Recognition},
+  volume={133},
+  pages={108997},
+  year={2023},
+  publisher={Elsevier}
+}
+```
+This implementation is for non-commercial research use only. If you find this code useful in your research, please cite the above paper. Please also see our other works:
+
+- Frequency-Based Enhancement Network for Efficient Super-Resolution - IEEE ACCESS, 2022 - [[Paper](https://ieeexplore.ieee.org/document/9778017)] 
+[[Code](https://github.com/pbehjatii/FENet)] 
+
+- OverNet: Lightweight Multi-Scale Super-Resolution with Overscaling Network - WACV, 2022- [[Paper](https://openaccess.thecvf.com/content/WACV2021/papers/Behjati_OverNet_Lightweight_Multi-Scale_Super-Resolution_With_Overscaling_Network_WACV_2021_paper.pdf)] 
+[[Code](https://github.com/pbehjatii/OverNet-PyTorch)] 
+
+- Hierarchical Residual Attention Network for Single Image Super-Resolution [[arXiv](https://arxiv.org/abs/2012.04578)]
