@@ -71,13 +71,14 @@ $ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 
  ### Results
 We achieved state-of-the-art performance on lightweigh image SR, denoising and deblurring. All visual results of DiVANet (BI, BD, and DN) for scale factor x2, x3, and x4 can be downloaded [here.](https://drive.google.com/drive/folders/1svSJq8UlU8Yq90tLfByhv_0ctPKv5PiN?usp=sharing)
 
-</details>
+<details>
 <summary>Lightweight Single Image Super-Resolution (click me)</summary>
 <p align="center">
   <img width="800" src="assets/BI_results.png">
   <img width="700" height="900" src="assets/BI_Visualize.png">
 </p>
- </details>
+  </details>
+
 
 <details>
 <summary>Image denoising and deblurring (click me)</summary>
