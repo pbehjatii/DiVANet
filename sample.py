@@ -11,10 +11,10 @@ import torch.nn as nn
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default='divanet')
-    parser.add_argument("--ckpt_path", type=str, default='/home/pbehjati/Divanet_github/checkpoints/scale_x4/carn_test_500000.pth.tar')
+    parser.add_argument("--ckpt_path", type=str, default='./checkpoints/scale_x4/carn_test_500000.pth.tar')
     parser.add_argument("--group", type=int, default=4)
     parser.add_argument("--sample_dir", type=str, default='sample')
-    parser.add_argument("--test_data_dir", type=str, default="/home/pbehjati/All_codes/datasetS/DIV2K/Set5")
+    parser.add_argument("--test_data_dir", type=str, default="./datasets/DIV2K/Set5")
     parser.add_argument("--scale", type=int, default=4)
     parser.add_argument("--shave", type=int, default=20)
     parser.add_argument("--num_gpu", type=int, default=4)
