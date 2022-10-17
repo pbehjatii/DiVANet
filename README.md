@@ -7,3 +7,81 @@ Recent advances in single image super-resolution (SISR) explore the power of dee
 makes modern architectures less applicable in practice. In addition, most CNN-based SR methods do not fully utilize the informative hierarchical features that are helpful for ﬁnal image recovery. In order to address these issues, we propose a directional variance attention network (DiVANet), a computationally eﬃcient yet accurate network for SISR. Speciﬁcally, we introduce a novel directional variance attention (DiVA) mechanism to capture long-range spatial dependencies and exploit inter-channel dependencies simultaneously for more discriminative representations. Furthermore, we propose a residual attention feature group (RAFG) for parallelizing attention and residual block computation. The output of each residual block is linearly fused at the RAFG output to provide access to the whole feature hierarchy. In parallel, DiVA extracts most relevant features from the network for improving the ﬁnal output and preventing information loss along the successive operations inside the network. Experimental results demonstrate the superiority of DiVANet over the state of the art in several datasets, while maintaining relatively low computation and memory footprint.
 
 <img src="assets/Main_figure.png">
+
+### Requirements
+- Python 3
+- [PyTorch](https://github.com/pytorch/pytorch) (0.4.0), [torchvision](https://github.com/pytorch/vision)
+- Numpy, Scipy
+- Pillow, Scikit-image
+- h5py
+- importlib
+
+#### Contents
+1. [Dataset](#Dataset)
+1. [Testing](#Testing)
+1. [Training](#Training)
+1. [Results](#Results)
+1. [Citetion](#Citetion)
+
+
+### Dataset
+We use DIV2K dataset for training and Set5, Set14, B100, and Urban100 dataset for the benchmark test. Here are the following steps to prepare datasets.
+
+1. Download [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K) and unzip on `dataset` directory as below:
+  ```
+  dataset
+  └── DIV2K
+      ├── DIV2K_train_HR
+      ├── DIV2K_train_LR_bicubic
+      ├── DIV2K_valid_HR
+      └── DIV2K_valid_LR_bicubic
+  ```
+2. To accelerate training, we first convert training images to h5 format as follow (h5py module has to be installed).
+```shell
+$ python div2h5.py
+```
+3. Other benchmark datasets can be downloaded in [Google Drive](https://drive.google.com/drive/folders/1t2le0-Wz7GZQ4M2mJqmRamw5o4ce2AVw?usp=sharing). Same as DIV2K, please put all the datasets in `dataset` directory.
+
+### Testing
+We provide the pretrained models in `checkpoint` directory. To test DiVANet on benchmark dataset:
+```shell
+# Scale factor x2
+$ python sample.py      --test_data_dir dataset/<dataset> --scale 2 --ckpt_path ./checkpoints/<path>.pth --sample_dir <sample_dir>
+
+# Scale factor x3                
+$ python sample.py      --test_data_dir dataset/<dataset> --scale 3 --ckpt_path ./checkpoints/<path>.pth --sample_dir <sample_dir>
+
+# Scale factor x4
+$ python sample.py      --test_data_dir dataset/<dataset> --scale 4 --ckpt_path ./checkpoints/<path>.pth --sample_dir <sample_dir>
+```
+
+### Training
+Here are our settings to train DiVANet. Note: We use two GPU to utilize large batch size, but if OOM error arise, please reduce batch size.
+```shell
+# Scale factor x2
+$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 2  --upscale 3
+
+# Scale factor x3
+$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 3  --upscale 4
+
+# Scale factor x4
+$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 4  --upscale 5               
+                      
+ ```
+ ### Results
+We achieved state-of-the-art performance on lightweigh image SR, denoising and deblurring. All visual results of DiVANet (BI, BD, and DN) for scale factor x2, x3, and x4 can be downloaded [here.](https://drive.google.com/drive/folders/1svSJq8UlU8Yq90tLfByhv_0ctPKv5PiN?usp=sharing)
+
+<summary>Lightweight Single Image Super-Resolution (click me)</summary>
+<p align="center">
+  <img width="800" src="assets/BI_results.png">
+  <img width="700" height="500" src="assets/BI.png">
+</p>
+</details>
+
+<details>
+<summary>Image denoising and deblurring (click me)</summary>
+<p align="center">
+  <img width="900" src="assets/BD_DN_results.png">
+</p>
+  </details>
+
