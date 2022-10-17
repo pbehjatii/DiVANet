@@ -74,14 +74,15 @@ We achieved state-of-the-art performance on lightweigh image SR, denoising and d
 <summary>Lightweight Single Image Super-Resolution (click me)</summary>
 <p align="center">
   <img width="800" src="assets/BI_results.png">
-  <img width="700" height="500" src="assets/BI.png">
+  <img width="700" height="900" src="assets/BI_Visualize.png">
 </p>
 </details>
 
 <details>
 <summary>Image denoising and deblurring (click me)</summary>
 <p align="center">
-  <img width="900" src="assets/BD_DN_results.png">
+  <img width="700" src="assets/BD_visualize.png">
+  <img width="700" src="assets/DN_visualize.png">
 </p>
   </details>
 
