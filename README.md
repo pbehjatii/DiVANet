@@ -59,13 +59,13 @@ $ python sample.py      --test_data_dir dataset/<dataset> --scale 4 --ckpt_path 
 Here are our settings to train DiVANet. Note: We use two GPU to utilize large batch size, but if OOM error arise, please reduce batch size.
 ```shell
 # Scale factor x2
-$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 2  --upscale 3
+$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 2 
 
 # Scale factor x3
-$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 3  --upscale 4
+$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 3 
 
 # Scale factor x4
-$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 4  --upscale 5               
+$ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 --decay 150000 --scale 4                
                       
  ```
  ### Results
