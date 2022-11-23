@@ -6,7 +6,7 @@ import imageio
 import numpy as np
 import cv2
 
-dataset_dir = "/home/pbehjati/All_codes/datasetS/DIV2K/"
+dataset_dir = "../datasetS/DIV2K/"
 dataset_type = "train"
 
 f = h5py.File("DIV2K_{}_UPDATED_new.h5".format(dataset_type), "w")
