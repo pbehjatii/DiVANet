@@ -100,7 +100,7 @@ We achieved state-of-the-art performance on lightweigh image SR, denoising and d
   publisher={Elsevier}
 }
 ```
-This implementation is for non-commercial research use only. If you find this code useful in your research, please cite the above paper. Please also see our other works:
+Please also see our other works:
 
 - Frequency-Based Enhancement Network for Efficient Super-Resolution - IEEE ACCESS, 2022 - [[Paper](https://ieeexplore.ieee.org/document/9778017)] 
 [[Code](https://github.com/pbehjatii/FENet)] 
